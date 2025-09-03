@@ -4,6 +4,7 @@ To Run, you must have .NET installed
 https://dotnet.microsoft.com/en-us/download <br>
 https://learn.microsoft.com/en-us/dotnet/core/tools/
 <br>
+<br>
 ** Quick Start for .NET Developers | Photino ** <br>
 https://docs.tryphotino.io/Quick-Start-for-.NET-Developers
 <br>
@@ -19,7 +20,7 @@ dotnet run
 <br>
 <br>
 NOTE:<br>
-On Start, datafiles on nichpatr.com read and saved to data folder
+On Start, datafiles on nichpatr.com read and saved to data folder<br>
 media.js specifies audio and image sources on nichpatr.com
 <br>
 <br>
