@@ -14,8 +14,8 @@ Once Installed, Run via Command Line<br>
 Navigate to the directory:
 >cd C:\Users\...
 <br>
-Run:
-> dotnet run
+To Run:
+>dotnet run
 <br>
 <br>
 ** Photino **<br>
