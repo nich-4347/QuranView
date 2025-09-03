@@ -12,11 +12,13 @@ https://docs.tryphotino.io/Quick-Start-for-.NET-Developers
 Once Installed, Run via Command Line<br>
 (For Windows Type cmd in the Start Menu)<br>
 <br>
+<br>
 Navigate to the directory:
 >cd C:\Users\...
 <br>
 To Run:<br>
 dotnet run 
+<br>
 <br>
 <br>
 NOTE:<br>
