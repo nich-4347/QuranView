@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+
+    <script>
+      // Create new link Element
+      let link = document.createElement('link');
+      // set the attributes for link element
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = './file.css';
+      // Get HTML head element to append
+      // link element to it
+      document.getElementsByTagName('HEAD')[0].appendChild(link);
+    </script>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Quran</title>
+  </head>
+  <body>
+
+
+    <div class="base">
+
+
+      <div class="top1">
+        <span><a href="https://nichpatr.com/">nichpatr.com</a></span>
+        <span> | QuranView</span>
+      </div>
+
+      <!-- BEGIN FRAME  -->
+      <div class="frame">
+
+        <!-- BEGIN TITLE  -->
+        <div class="header">
+            <div class="top2">
+
+              <!-- TABLE  -->
+              <div id="table"   class="top3"></div>
+              <!-- PAGE AUDIO  -->
+              <div id="scroll"  class="top3"></div>
+
+              <span>|</span>
+
+              <!-- VIEW  -->
+              <div id="zoom"  class="top3"></div>
+              <div id="navbar"  class="top3"></div>
+
+              <!-- OPTION  -->
+              <div id="option"  class="top3"></div>
+
+            </div>
+
+          </div>
+          <!-- END TITLE -->
+
+          <!-- BEGIN CONTENT  -->
+          <div id="pagessection" class="content">
+
+            <!--  2 PAGES   -->
+            <div id="pages" class="pages">
+              <div id="box3" class="page"></div>
+            </div>
+
+            <!--  1 PAGE1   -->
+            <div id="singlepage" class="pages">
+              <div id="box4" class="singlepage"></div>
+            </div>
+
+          </div>
+          <!-- END CONTENT  -->
+
+          <!-- BEGIN FOOTER  -->
+          <div class="footer">
+            <div id="audio" class="player"></div>
+            <div class="bottom1">
+              <b><a href="./README/Viewer_info.htm"><i>i</i></a></b>
+            </div>
+          </div>
+          <!-- END FOOTER  -->
+
+        </div>
+        <!-- END FRAME  -->
+
+    </div>
+
+    <!-- BEGIN PANEL -->
+    <div id="nav" class="table">
+      <div id="process" class="head"></div>
+      <div id="box1"></div>
+    </div>
+    <!-- END PANEL -->
+
+
+
+    <!-- SCRIPTS -->
+
+    <script type="text/javascript" src="../data/surah-table-arr.js"></script>
+    <script type="text/javascript" src="../data/quarter-hizb-page-arr.js"></script>
+    <script type="text/javascript" src="../data/page-time-arr.js"></script>
+
+    <!--
+    <script type="text/javascript" src="https://nichpatr.com/Quran-Pages/data/surah-table-arr.js"></script>
+    <script type="text/javascript" src="https://nichpatr.com/Quran-Pages/data/quarter-hizb-page-arr.js"></script>
+    <script type="text/javascript" src="https://nichpatr.com/Quran-Pages/data/page-time-arr.js"></script>
+    -->
+
+    <script type="text/javascript" src="../media.js"></script>
+
+
+    <script type="text/javascript" src="./js/surah-juz-panels.js"></script>
+    <script type="text/javascript" src="./js/audio-images.js"></script>
+
+
+    <!--  -->
+
+
+  </body>
+</html>
+
