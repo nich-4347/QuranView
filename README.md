@@ -22,13 +22,14 @@ dotnet run
 <br>
 <br>
 NOTE:<br>
-On Start, datafiles on nichpatr.com read and saved to data folder<br>
-media.js specifies audio and image sources on nichpatr.com
+ - On Start, datafiles on nichpatr.com read and saved to data folder<br>
+ - media.js specifies audio and image sources on nichpatr.com
 <br>
 <br>
 Optional (Windows) : Create Shortcut<br>
-
 Target - C:\Windows\System32\cmd.exe /k cd C:\Users\... && dotnet run
+<br>
+<br>
 <br>
 ** Photino **<br>
 https://www.tryphotino.io/
