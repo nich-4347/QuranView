@@ -14,12 +14,8 @@ Once Installed, Run via Command Line<br>
 Navigate to the directory:
 >cd C:\Users\...
 <br>
-To Run:
-dotnet run <br>
-<br>
-<br>
-** Photino **<br>
-https://www.tryphotino.io/
+To Run:<br>
+dotnet run 
 <br>
 <br>
 NOTE:<br>
@@ -27,6 +23,9 @@ On Start, datafiles on nichpatr.com read and saved to data folder
 media.js specifies audio and image sources on nichpatr.com
 <br>
 <br>
-Optional (Windows) : Create Shortcut
+Optional (Windows) : Create Shortcut<br>
 
 Target - C:\Windows\System32\cmd.exe /k cd C:\Users\... && dotnet run
+<br>
+** Photino **<br>
+https://www.tryphotino.io/
