@@ -1,4 +1,4 @@
-To Run, you must have .NET installed
+To Run, you must have .NET installed:
 
 ** .NET CLI | Microsoft Learn  ** <br>
 https://dotnet.microsoft.com/en-us/download <br>
