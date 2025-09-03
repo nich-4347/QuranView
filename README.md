@@ -26,6 +26,7 @@ NOTE:<br>
  - media.js specifies audio and image sources on nichpatr.com
 <br>
 <br>
+<br>
 Optional (Windows) : Create Shortcut<br>
 Target - C:\Windows\System32\cmd.exe /k cd C:\Users\... && dotnet run
 <br>
