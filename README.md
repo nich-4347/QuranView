@@ -15,7 +15,7 @@ Navigate to the directory:
 >cd C:\Users\...
 <br>
 To Run:
->dotnet run
+dotnet run <br>
 <br>
 <br>
 ** Photino **<br>
