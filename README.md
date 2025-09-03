@@ -1,12 +1,10 @@
 To Run, you must have .NET installed
 
 ** .NET CLI | Microsoft Learn  **
-
 https://dotnet.microsoft.com/en-us/download
 https://learn.microsoft.com/en-us/dotnet/core/tools/
-
+<br>
 ** Quick Start for .NET Developers | Photino **
-
 https://docs.tryphotino.io/Quick-Start-for-.NET-Developers
 
 
