@@ -356,7 +356,7 @@ function myTableFunction(first, last) {
         quarter = i*8;
 
         //if (quarterhizbpage[quarter].page==0 || quarterhizbpage[quarter+1].page==0){break;}
-        if (quarter >= quarterhizbpage.length){break;}
+        if (quarter >= quarterhizbpage.length-1){break;}
 
         out += '<tr>';
         out += '<td style="border-bottom-style:solid;border-bottom-width:1px">'+"Juz' " + juz + '</td>';
@@ -384,7 +384,7 @@ function myTableFunction(first, last) {
 
           quarter = i*8 + j;
 
-          if (quarter > lastquarter || quarter >= quarterhizbpage.length){
+          if (quarter > lastquarter || quarter >= quarterhizbpage.length-1){
           break;
           }
 
@@ -435,14 +435,16 @@ function myTableFunction(first, last) {
           var nextpage;
 
           if (next < quarterhizbpage.length){
-            if (quarterhizbpage[next].page == 0) {break;}
+            //if (quarterhizbpage[next].page == 0) {break;}
+            //if (next  == quarterhizbpage.length) {break;}
             nextpage = quarterhizbpage[next].page;
           } else {
             nextpage = pagetime.length;
           }
 
           if (i == last.juz-1 && j == last.sect) {
-            nextpage = last.page;
+            //nextpage = last.page;
+            nextpage = last.page-1;
           }
 
           // - Pages -
@@ -451,7 +453,8 @@ function myTableFunction(first, last) {
 
             page = l;
 
-            if (pagetime[l-1].time != 0) {
+            //if (pagetime[l-1].time != 0) {
+            if (pagetime[l-1].time != 0 && pagetime[l-1].time != -1) {
 
             min = Math.floor(pagetime[l-1].time / 60);
             sec = pagetime[l-1].time % 60;

@@ -324,7 +324,7 @@ function setCanvasNew(string){
     } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
 
       if (hizbtype == 1){
-        ctx2.drawImage(hizbmargimg1, x, y);
+        ctx2.drawImage(hizbmargimg1, x, y+10);
       }
   });
 
