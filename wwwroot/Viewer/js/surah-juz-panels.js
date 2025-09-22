@@ -355,7 +355,8 @@ function myTableFunction(first, last) {
 
         quarter = i*8;
 
-        if (quarterhizbpage[quarter].page==0 || quarterhizbpage[quarter+1].page==0){break;}
+        //if (quarterhizbpage[quarter].page==0 || quarterhizbpage[quarter+1].page==0){break;}
+        if (quarter >= quarterhizbpage.length){break;}
 
         out += '<tr>';
         out += '<td style="border-bottom-style:solid;border-bottom-width:1px">'+"Juz' " + juz + '</td>';
