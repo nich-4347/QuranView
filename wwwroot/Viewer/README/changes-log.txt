@@ -2,14 +2,15 @@
 Fixes
 _____
 
+09/22/25	Adjust for full 2 pages at End of Audio 
 08/28/25	Trim first hizb new Juz from table; Page image margin adjustments;
 08/01/25	
-
 
 
 Page Updates
 ____________ 
 
-08/01/25	  
+09/22/25	Update to Python Script: Returned Data to As-Complete & Removed NULL Values  
+08/01/25	
 
 
