@@ -320,7 +320,8 @@ function setCanvasNew(string){
         if (quarterhizbpage[i].corr_d != 0){corr = 1}
       }
       i++
-    } while (quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
+    // } while (quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
+    } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
 
       if (hizbtype == 1){
         ctx2.drawImage(hizbmargimg1, x, y);
@@ -339,7 +340,7 @@ function setCanvasNew(string){
     });
     hizbimg.addEventListener("load", (e) => {
       if (mark != 0){
-        ctx2.drawImage(hizbimg, x_h, y_h+5);
+        ctx2.drawImage(hizbimg, x_h+6, y_h+5);
       }
     });
     correctionimg.addEventListener("load", (e) => {
@@ -444,7 +445,7 @@ function setCanvasPage(string){
         hizbtype = quarterhizbpage[i].hizb_type;
       }
       i++
-    } while (quarterhizbpage[i].page <= currpage && quarterhizbpage[i].page != 0);
+    } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= currpage && quarterhizbpage[i].page != 0);
 
     hizbmargimg1.addEventListener("load", (e) => {
 
@@ -585,7 +586,8 @@ function endHandler() {
 
     var q = {"juz" : 1, "sect" : 0}
 
-    if (currentquart < quarterhizbpage.length-1 && quarterhizbpage[currentquart+2].page != 0){
+    // if (currentquart < quarterhizbpage.length-1 && quarterhizbpage[currentquart+2].page != 0){
+    if (currentquart < quarterhizbpage.length-1 && currentquart+2 < quarterhizbpage.length){
       currentquart++;
       q.juz  = (currentquart / 8 | 0) + 1;
       q.sect = currentquart - (q.juz-1)*8;
@@ -594,6 +596,8 @@ function endHandler() {
       currentquart = 0;
       q.juz = 1;
       q.sect = 0;
+      currpage = 1;
+      turnplay();
     }
 
     if(isplaying == 1) {
@@ -608,8 +612,9 @@ function endHandler() {
     }
 
     setImageSrc();
-    document.getElementById("page").innerHTML = 'p. '+currpage+" Juz' "+q.juz+', '+hizbStr(q.juz,q.sect);
-
+    if(isplaying == 1) {
+      document.getElementById("page").innerHTML = 'p. '+currpage+" Juz' "+q.juz+', '+hizbStr(q.juz,q.sect);
+    }
 }
 
 // -----------------------------------------------------------------------
@@ -791,7 +796,7 @@ function turnplay(){
   } else {
 
 
-  for (i = 0; i < quarterhizbpage.length; i++){
+  for (i = 0; i < quarterhizbpage.length-1; i++){
     if (currpage > quarterhizbpage[i].page && currpage <= quarterhizbpage[i+1].page) {
       currentquart = i;
       break;
@@ -801,9 +806,12 @@ function turnplay(){
     }
   }
 
-  document.getElementById("playstop").innerHTML = " ( [] } ";
+  if (pagetime[currpage-1].time != -1){
+    document.getElementById("playstop").innerHTML = " ( [] } ";
+    buttonFunction2 (currentquart, currpage);
+  }
 
-  buttonFunction2 (currentquart, currpage);
+
   }
 
 }

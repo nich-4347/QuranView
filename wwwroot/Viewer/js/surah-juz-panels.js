@@ -469,7 +469,8 @@ function myTableFunction(first, last) {
 
             }
 
-            if (quarterhizbpage[quarter+2].page==0){break;}
+            // if (quarterhizbpage[quarter+2].page==0){break;}
+            if (quarter+2 >= quarterhizbpage.length ){break;}
 
         }
     }
