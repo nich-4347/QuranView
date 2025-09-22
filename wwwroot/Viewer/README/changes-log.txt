@@ -2,8 +2,9 @@
 Fixes
 _____
 
+09/23/25	Table entries at end of juz'   
 09/22/25	Adjust for full 2 pages at End of Audio 
-08/28/25	Trim first hizb new Juz from table; Page image margin adjustments;
+08/28/25	Trim first hizb new Juz from table 
 08/01/25	
 
 
