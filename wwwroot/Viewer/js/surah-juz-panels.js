@@ -417,7 +417,7 @@ function myTableFunction(first, last) {
 
           out += '<td>' + displayhizb + '</td>';
           out += '<td bgcolor="#0099ff"><button onclick="buttonFunction(' + quarter + ', ' + page + ')" type="button">'+sectSymbol(symbol)+'</button></td>';
-          out += '<td>pg. ' +  page + '</td>';
+          out += '<td>p. ' +  page + '</td>';
           out += '</tr>';
 
           if (first.page > page+1){
@@ -465,7 +465,7 @@ function myTableFunction(first, last) {
               out += '<td></td>';
               out += '<td><button onclick="buttonFunction(' + quarter + ', ' + page + ')" type="button">.</button></td>';
 
-              out += '<td>pg. ' +  page + '</td>';
+              out += '<td>p. ' +  page + '</td>';
               out += '</tr>';
             }
 

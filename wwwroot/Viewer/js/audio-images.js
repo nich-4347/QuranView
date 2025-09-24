@@ -670,7 +670,7 @@ function useTime() {
     q.sect = currentquart % 8;
 
     if(isplaying == 1) {
-    document.getElementById("page").innerHTML = 'pg. '+currpage+" - Juz'"+q.juz+', '+hizbStr(q.juz,q.sect);
+    document.getElementById("page").innerHTML = 'p. '+currpage+" - Juz'"+q.juz+', '+hizbStr(q.juz,q.sect);
     }
 }
 
@@ -730,7 +730,7 @@ function turnpage(direction){
       }
   }
 
-  document.getElementById("page").innerHTML = 'pg. '+currpage;
+  document.getElementById("page").innerHTML = 'p. '+currpage;
   document.getElementById("playstop").innerHTML = " (>) ";
 
   setImageSrc();
@@ -763,7 +763,7 @@ function oneturnpage(direction){
       currpage--;
     }
 
-  document.getElementById("page").innerHTML = 'pg. '+currpage;
+  document.getElementById("page").innerHTML = 'p. '+currpage;
   document.getElementById("playstop").innerHTML = " (>) ";
 
   setImageSrc();
@@ -789,7 +789,7 @@ function turnplay(){
     isplaying = 0;
     audset = 0;
 
-    document.getElementById("page").innerHTML = 'pg. '+currpage;
+    document.getElementById("page").innerHTML = 'p. '+currpage;
 
     document.getElementById("playstop").innerHTML = " (>) ";
 
