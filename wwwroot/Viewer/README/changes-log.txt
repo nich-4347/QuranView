@@ -2,6 +2,7 @@
 Fixes
 _____
 
+09/26/25	Last.Juz, Last.Sect calc. 
 09/24/25	p. not pg. for page
 09/23/25	addl. for last Hizb of Juz'   
 09/22/25	Adjust for full 2 pages at end of audio 
