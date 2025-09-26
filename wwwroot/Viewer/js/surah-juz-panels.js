@@ -211,9 +211,9 @@ function buildAll () {
 
     var tmpval;
 
-    last.juz = (quarterhizbpage.length / 8 | 0);
-    last.sect = 7;
-    // last.juz = quarterhizbpage.length % 8;
+    last.juz = (quarterhizbpage.length / 8 | 0) + 1;
+    last.sect = quarterhizbpage.length % 8;
+    //last.sect = 7;
 
     last.page = pagetime.length;
 
@@ -259,15 +259,14 @@ function buildSurah (surahtablenumber) {
     first.sect = sect;
     first.page = page;
 
-    if (surahtablenumber < SurahTable.length-1){
-      last.juz = SurahTable[incr].Juz;
-      last.sect = SurahTable[incr].Sect;
-      last.page = SurahTable[incr].page;
-
+    if (SurahTable[surahtablenumber+1].page != 0 && surahtablenumber < SurahTable.length-1){
+        last.juz = SurahTable[incr].Juz;
+        last.sect = SurahTable[incr].Sect;
+        last.page = SurahTable[incr].page;
     } else {
-      last.juz  = (quarterhizbpage.length / 8 | 0);
-      last.sect = 7;
-      // last.sect = quarterhizbpage.length % 8;
+      last.juz  = (quarterhizbpage.length / 8 | 0) + 1;
+      last.sect = quarterhizbpage.length % 8;
+      //last.sect = 7;
       last.page = pagetime.length;
     }
 
