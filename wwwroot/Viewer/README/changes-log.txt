@@ -2,6 +2,7 @@
 Fixes
 _____
 
+11/30/25	Addl. & Issues-Errors
 11/29/25	Correct Surah Title graphic   
 09/26/25	Last.Juz, Last.Sect calc. 
 09/24/25	p. not pg. for page
