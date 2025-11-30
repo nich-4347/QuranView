@@ -276,7 +276,7 @@ function setCanvasNew(string){
         ctx2.drawImage(titleimg, x, y);
       }
       i++;
-    } while (SurahTable[i].page <= rpage);
+    } while (SurahTable[i].page <= rpage && SurahTable[i].page != 0);
 
     i = 0;
     do {
@@ -285,7 +285,7 @@ function setCanvasNew(string){
         ctx2.drawImage(titleimg, x, y);
       }
       i++;
-    } while (SurahTable[i].page <= rpage+1);
+    } while (SurahTable[i].page <= rpage+1 && SurahTable[i].page != 0);
   });
   titleimg.src = titleimgdir;
 
@@ -412,7 +412,7 @@ function setCanvasPage(string){
           ctx.drawImage(titleimg, x, y);
         }
         i++;
-      } while (SurahTable[i].page <= currpage);
+      } while (SurahTable[i].page <= currpage && SurahTable[i].page != 0);
     });
     titleimg.src = titleimgdir;
 

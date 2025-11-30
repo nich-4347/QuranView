@@ -58,7 +58,7 @@ function myTitleFunction() {
     document.getElementById("scroll").innerHTML = out;
 
 
-    out =   '<select name="zoom" id="zoom" onchange="selectZoom(this)">';
+    out =   '<select title="zoom amount" name="zoomcontrol" id="zoomcontrol" onchange="selectZoom(this)">';
     out +=  '<option value="75">75%</option><option value="100" selected>100%</option><option value="150">150%</option><option value="200">200%</option><option value="250">250%</option>';
     out +=  '</select>';
     document.getElementById("zoom").innerHTML = out;
@@ -66,7 +66,7 @@ function myTitleFunction() {
     out =  '<button id="pagespage" onclick="pagepages()" type="button"> || | </button>';
     document.getElementById("navbar").innerHTML = out;
 
-    out =   '<select name="ver" id="ver" onchange="setver(this)">';
+    out =   '<select title="style" name="ver" id="ver" onchange="setver(this)">';
     out +=  '<option value="0" selected>Parks</option><option value="1">Roses</option>';
     out +=  '</select>';
     document.getElementById("option").innerHTML = out;
@@ -76,7 +76,7 @@ function myTitleFunction() {
     out += '<button onclick="buildSurahTable()" type="button"> Surah</button>';
     out += '<button onclick="buildAll()" type="button">Juz</button>';
     out += '</span>'
-    out += '<span> <input type="radio" name="option" onclick="radioselect(this)" checked /> (>)<span>'
+    out += '<span> <input title="play" type="radio" name="option" onclick="radioselect(this)" checked /> (>)<span>'
 
     document.getElementById("titlesection").innerHTML = out;
 }
