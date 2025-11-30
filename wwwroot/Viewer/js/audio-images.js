@@ -412,7 +412,7 @@ function setCanvasPage(string){
           ctx.drawImage(titleimg, x, y);
         }
         i++;
-      } while (SurahTable[i].page >= currpage);
+      } while (SurahTable[i].page <= currpage);
     });
     titleimg.src = titleimgdir;
 
