@@ -276,7 +276,7 @@ function setCanvasNew(string){
         ctx2.drawImage(titleimg, x, y);
       }
       i++;
-    } while (SurahTable[i].page >= rpage);
+    } while (SurahTable[i].page <= rpage);
 
     i = 0;
     do {
@@ -285,7 +285,7 @@ function setCanvasNew(string){
         ctx2.drawImage(titleimg, x, y);
       }
       i++;
-    } while (SurahTable[i].page >= rpage+1);
+    } while (SurahTable[i].page <= rpage+1);
   });
   titleimg.src = titleimgdir;
 
