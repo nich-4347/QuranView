@@ -2,6 +2,7 @@
 Fixes
 _____
 
+01/14/26	Adjust last.sect, last.page in SurahTable()      
 11/30/25	Addl. & Issues-Errors
 11/29/25	Correct Surah Title graphic   
 09/26/25	Last.Juz, Last.Sect calc. 
