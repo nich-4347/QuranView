@@ -261,8 +261,16 @@ function buildSurah (surahtablenumber) {
 
     if (SurahTable[surahtablenumber+1].page != 0 && surahtablenumber < SurahTable.length-1){
         last.juz = SurahTable[incr].Juz;
-        last.sect = SurahTable[incr].Sect;
-        last.page = SurahTable[incr].page;
+        if (SurahTable[surahtablenumber+1].time != 0){
+          last.sect = SurahTable[incr].Sect;
+        } else {
+          last.sect = SurahTable[incr].Sect - 1;
+        }
+        if (SurahTable[surahtablenumber+1].line > 1){
+          last.page = SurahTable[incr].page;
+        } else {
+          last.page = SurahTable[incr].page - 1;
+        }
     } else {
       last.juz  = (quarterhizbpage.length / 8 | 0) + 1;
       last.sect = quarterhizbpage.length % 8;
@@ -294,6 +302,7 @@ function buildSurah (surahtablenumber) {
     startbutton +=  '</p><br></br>';
 
     document.getElementById("tableheader").innerHTML = startbutton;
+
 
     myTableFunction(first, last);
 
@@ -443,7 +452,7 @@ function myTableFunction(first, last) {
 
           if (i == last.juz-1 && j == last.sect) {
             //nextpage = last.page;
-            nextpage = last.page-1;
+            nextpage = last.page;
           }
 
           // - Pages -
