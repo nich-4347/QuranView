@@ -45,7 +45,7 @@ namespace HelloPhotinoApp
 
         static async Task Read(string datafile)
         {
-            string url = "https://nichpatr.com/Quran-Pages/data/" + datafile; // Replace with your URL
+            string url = "https://nichpatr.com/QuranSites/QuranView/data/" + datafile; // Replace with your URL
 
             // Path to save the new HTML file
             //string outputFilePath = @"C:\tmp\QuranView Data\" + datafile;
