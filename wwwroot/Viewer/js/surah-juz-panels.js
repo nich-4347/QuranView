@@ -296,11 +296,14 @@ function buildSurah (surahtablenumber) {
     quarter = (juz-1) * 8 + sect;
 
     startbutton +=  '<p style="width: 97%;">';
-    startbutton +=  '<button onclick="onClickStartButton('+quarter+','+page+','+time+')" type="button" style="float: right;">start</button>';
+    if (quarter < quarterhizbpage.length-1){
+      startbutton +=  '<button onclick="onClickStartButton('+quarter+','+page+','+time+')" type="button" style="float: right;">start</button>';
+    } else {
+      startbutton +=  '<button type="button" style="float: right;">start</button>';
+    }
     startbutton +=  '<span style="float: right;"> - </span>';
     startbutton +=  '<span style="float: right;"> ' + formattedtime + ' </span>';
     startbutton +=  '</p><br></br>';
-
     document.getElementById("tableheader").innerHTML = startbutton;
 
 
