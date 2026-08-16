@@ -308,14 +308,14 @@ function setCanvasNew(string){
         [y, x] = setimglocation(quarterhizbpage[i].hizb_line-1.35, 2.055);
         hizbtype = quarterhizbpage[i].hizb_type;
         [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-        [y_c, x_c] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].corr_d);
+        [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
         if (quarterhizbpage[i].mark_d != 0){mark = 1}
         if (quarterhizbpage[i].corr_d != 0){corr = 1}
       } else if (quarterhizbpage[i].page == rpage+1){
         [y, x] = setimglocation(quarterhizbpage[i].hizb_line-1.35,-2.085);
         hizbtype = quarterhizbpage[i].hizb_type;
         [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-        [y_c, x_c] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].corr_d);
+        [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
         if (quarterhizbpage[i].mark_d != 0){mark = 1}
         if (quarterhizbpage[i].corr_d != 0){corr = 1}
       }
@@ -345,7 +345,7 @@ function setCanvasNew(string){
     });
     correctionimg.addEventListener("load", (e) => {
       if (corr != 0){
-        ctx2.drawImage(correctionimg, x_c, y_c);
+        ctx2.drawImage(correctionimg, x_c+6, y_c+5);
       }
     });
 
@@ -432,13 +432,13 @@ function setCanvasPage(string){
         if (currpage % 2 !== 0){
           [y, x] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, 2.055);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].corr_d);
+          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
           if (quarterhizbpage[i].corr_d != 0){corr = 1}
         } else{
           [y, x] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, -2.085);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].corr_d);
+          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
           if (quarterhizbpage[i].corr_d != 0){corr = 1}
         }
@@ -472,7 +472,7 @@ function setCanvasPage(string){
     });
     correctionimg.addEventListener("load", (e) => {
       if (corr != 0){
-        ctx.drawImage(correctionimg, x_c, y_c);
+        ctx.drawImage(correctionimg, x_c, y_c+5);
       }
     });
 
