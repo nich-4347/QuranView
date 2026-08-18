@@ -167,3 +167,44 @@ div.content {
   overflow-y: scroll; /* Vertical scroll */
 }
 
+div.content1 {
+  position: absolute;
+  bottom: 48%;
+  top: 11%;
+  width:  100%;
+  height: 60%;
+  overflow-x: scroll; /* Horizontal scroll */
+  overflow-y: scroll; /* Vertical scroll */
+}
+div.content2 {
+  position: absolute;
+  bottom: 13%;
+  top: 72%;
+  width:  100%;
+  height: 15%;
+  overflow-x: hidden; /* Horizontal scroll */
+  overflow-y: hidden; /* Vertical scroll */
+}
+
+div.content0 {
+  position: absolute;
+  bottom: 88%;
+  top: 86%;
+  width:  100%;
+  height: 0%;
+  overflow-x: scroll; /* Horizontal scroll */
+  overflow-y: scroll; /* Vertical scroll */
+}
+
+.W4W {
+  position: absolute;
+  top: 0;
+  bottom: 25;
+  left: 0;
+  width: 100%; /* Adjust as needed */
+  height: 100%;
+  object-fit: contain;
+  border-style: solid;
+  border-color: rgb(240, 240, 240);
+}
+
