@@ -17,6 +17,8 @@ _____
 Page Updates
 ____________ 
 
+08/18/26	Word 4 Word Reading Pane in Single Page View - Surah 12 on
+
 09/22/25	Updated Python Script and made changes: 
 			Return QuarterHizbPage back to As-Complete 
 			Remove NULL values from QuarterHizbPage & PageTime  
