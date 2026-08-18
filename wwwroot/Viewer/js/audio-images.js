@@ -661,9 +661,11 @@ function useTime() {
     if (time < timebegin){
       currpage--;
       setImageSrc();
+      isw4w();
     } else if (time > timeend) {
       currpage++;
       setImageSrc();
+      isw4w();
     }
 
     q.juz  = (currentquart / 8 | 0) + 1;
@@ -672,6 +674,7 @@ function useTime() {
     if(isplaying == 1) {
     document.getElementById("page").innerHTML = 'p. '+currpage+" - Juz'"+q.juz+', '+hizbStr(q.juz,q.sect);
     }
+
 }
 
 // -----------------------------------------------------------------------
