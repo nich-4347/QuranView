@@ -69,6 +69,9 @@ function myTitleFunction() {
     out =   '<select title="style" name="ver" id="ver" onchange="setver(this)">';
     out +=  '<option value="0" selected>Parks</option><option value="1">Roses</option>';
     out +=  '</select>';
+
+    out +=  '<span> </span>';
+    out +=  '<button hidden id="w4w"  onclick="w4w()" type="button">W4W</button>';
     document.getElementById("option").innerHTML = out;
 
 
@@ -108,6 +111,8 @@ function pagepages() {
         document.getElementById("onepageleft").removeAttribute("hidden");
         document.getElementById("onepageright").removeAttribute("hidden");
 
+        document.getElementById("w4w").setAttribute("hidden","");
+
         document.getElementById("pages").removeAttribute("hidden");
         document.getElementById("singlepage").setAttribute("hidden","");
 
@@ -124,10 +129,118 @@ function pagepages() {
         document.getElementById("singlepage").removeAttribute("hidden");
         document.getElementById("pages").setAttribute("hidden","");
         pagemode = 1;
+
+        //document.getElementById("w4w").removeAttribute("hidden","");
+        isw4w();
+
     }
+
+    var element1 = document.getElementById("pagessection");
+    if (element1.className != "content") {
+      element1.className = "content";
+    }
+    var element2 = document.getElementById("w4wpane");
+    if (element2.className != "content0") {
+      element2.className = "content0";
+    }
+
 
  setImageSrc();
 }
+
+// -----------------------------------------------------------------------
+
+
+
+
+function w4w() {
+
+  var element1 = document.getElementById("pagessection");
+  if (element1.className == "content") {
+    element1.className = "content1";
+  } else {
+    element1.className = "content";
+  }
+  var element2 = document.getElementById("w4wpane");
+  if (element2.className == "content0") {
+    element2.className = "content2";
+    element2.innerHTML = "<embed id='w4wwin' class='W4W'>";
+
+  } else {
+    element2.className = "content0";
+  }
+
+  if (element2.className == "content2") {
+    w4wpage();
+  }
+}
+
+
+function w4wpage(){
+
+  var content = document.getElementById("w4wwin");
+
+  var currSur = currSurah();
+
+  //console.log("num:"+currSur+" page:"+currpage);
+
+  content.src = "https://nichpatr.com/QuranSites/QuranView/Viewer/php/w4w.php?num="+currSur+"&page="+currpage+"";
+
+}
+
+
+function currSurah(){
+  //console.log(currpage);
+
+  let i = 0;
+  while (SurahTable[i].page != 0 && i < SurahTable.length-1 && currpage >= SurahTable[i].page) {
+    i++;
+  }
+
+  var surahnumber = i;
+
+  //console.log("page " + currpage + " num " +surahnumber);
+
+  return surahnumber;
+
+}
+
+function isw4w(){
+
+  var currS = currSurah() - 1;
+  //console.log(currS);
+
+  var element2 = document.getElementById("w4wpane");
+
+
+  if(pagemode == 1 && SurahTable[currS].isw4w == 1){
+    document.getElementById("w4w").removeAttribute("hidden","");
+
+    if (element2.className == "content2") {
+      w4wpage();
+    }
+
+  } else if(pagemode == 1 && currS > 0 && SurahTable[currS-1].isw4w == 1 && currpage == SurahTable[currS].page && SurahTable[currS].line > 1) {
+    document.getElementById("w4w").removeAttribute("hidden","");
+
+    if (element2.className == "content2") {
+      w4wpage();
+    }
+
+  } else {
+
+    document.getElementById("w4w").setAttribute("hidden","");
+
+    if (element2.className == "content2") {
+      w4w();
+    }
+
+  }
+
+
+
+}
+
 
 // -----------------------------------------------------------------------
 
@@ -649,6 +762,8 @@ function buttonFunction(quarter,page) {
 
     }
 
+    isw4w();
+
     setImageSrc();
 
 }
@@ -691,6 +806,8 @@ function buttonFunction2(quarter,page) {
     } else {
       setTime(0);
     }
+
+  isw4w();
 
   setImageSrc();
 

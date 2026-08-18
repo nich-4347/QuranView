@@ -733,6 +733,8 @@ function turnpage(direction){
   document.getElementById("page").innerHTML = 'p. '+currpage;
   document.getElementById("playstop").innerHTML = " (>) ";
 
+  isw4w();
+
   setImageSrc();
 
 }
@@ -765,6 +767,8 @@ function oneturnpage(direction){
 
   document.getElementById("page").innerHTML = 'p. '+currpage;
   document.getElementById("playstop").innerHTML = " (>) ";
+
+  isw4w();
 
   setImageSrc();
 
