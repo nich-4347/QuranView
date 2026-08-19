@@ -172,16 +172,16 @@ div.content1 {
   bottom: 48%;
   top: 11%;
   width:  100%;
-  height: 60%;
+  height: 55%;
   overflow-x: scroll; /* Horizontal scroll */
   overflow-y: scroll; /* Vertical scroll */
 }
 div.content2 {
   position: absolute;
   bottom: 13%;
-  top: 72%;
+  top: 66%;
   width:  100%;
-  height: 15%;
+  height: 20%;
   overflow-x: hidden; /* Horizontal scroll */
   overflow-y: hidden; /* Vertical scroll */
 }
