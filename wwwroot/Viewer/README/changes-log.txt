@@ -20,9 +20,13 @@ ____________
 
 08/18/26	Word 4 Word Reading Pane in Single Page View - Surah 12 on
 
-09/22/25	Updated Python Script and made changes: 
-			Return QuarterHizbPage back to As-Complete 
-			Remove NULL values from QuarterHizbPage & PageTime  
+09/22/25	Only SurahTable array is partially complete. 
+		QuarterHizbPage array has been returned to As-Complete.  
+
+		Where no value, remove NULL values from QuarterHizbPage & PageTime
+    
+		Updated Python Script to correct output from Blender.  
+
 08/01/25	
 
 
