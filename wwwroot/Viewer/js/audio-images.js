@@ -450,7 +450,7 @@ function setCanvasPage(string){
     hizbmargimg1.addEventListener("load", (e) => {
 
     if (hizbtype == 1){
-        ctx.drawImage(hizbmargimg1, x, y);
+        ctx.drawImage(hizbmargimg1, x, y+10);
       }
 
     });
