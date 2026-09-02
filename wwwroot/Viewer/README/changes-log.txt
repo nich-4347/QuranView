@@ -2,16 +2,16 @@
 Fixes
 _____
 
-08/30/26	Adjust Juz' marker location for single page.
-08/16/26	Add back in unique corr_line
-01/14/26	Adjust last.sect, last.page in SurahTable()      
-11/30/25	Addl. & Issues-Errors
-11/29/25	Correct Surah Title graphic   
-09/26/25	Last.Juz, Last.Sect calc. 
-09/24/25	p. not pg. for page
-09/23/25	addl. for last Hizb of Juz'   
-09/22/25	Adjust for full 2 pages at end of audio 
-08/28/25	Trim first Hizb of new Juz' from table 
+08/30/26	Adjust Juz' marker location for single page    				-
+08/16/26	Add back in unique corr_line                         			-
+01/14/26	Adjust last.sect, last.page in SurahTable()          			-
+11/30/25	Additional *   & Issues-Errors remaining on Browser's Console		-
+11/29/25	Correct Surah Title graphic                          			-
+09/26/25	Last.Juz, Last.Sect calc.                            			-
+09/24/25	p. not pg. for page                                  			-
+09/23/25	Additional *  for last Hizb of Juz'                  			-
+09/22/25	(Adjust for full 2 pages)*  at end of audio          			-
+08/28/25	Trim first Hizb of new Juz' from table               			-
 08/01/25	
 
 
