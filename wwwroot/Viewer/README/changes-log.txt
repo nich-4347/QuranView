@@ -20,6 +20,8 @@ ____________
 
 08/18/26	Word 4 Word Reading Pane in Single Page View - Surah 12 on
 
+		Word for Word Translation is copied from Quran.com--
+
 09/22/25	Adjust Data:
 		- QuarterHizbPage array has been returned to As-Complete  
 		  Only SurahTable array is partially complete 
