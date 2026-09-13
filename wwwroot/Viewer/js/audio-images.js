@@ -249,14 +249,14 @@ function setCanvasNew(string){
   var Aimg = new Image();
   Aimg.addEventListener("load", (e) => {
 
-    for (i = 1; i <= 18; i++) {
+    for (i = 1; i <= 20; i++) {
       eval('zed = pagetime[rpage-1].A'+i+'_l');
       if (zed != 0){
         eval('[y, x] = setimglocation(pagetime[rpage-1].A'+i+'_l, pagetime[rpage-1].A'+i+'_d);');
         ctx2.drawImage(Aimg, x, y);
       }
     }
-    for (i = 1; i <= 18; i++) {
+    for (i = 1; i <= 20; i++) {
       eval('zed = pagetime[rpage].A'+i+'_l');
       if (zed != 0){
         eval('[y, x] = setimglocation(pagetime[rpage].A'+i+'_l, pagetime[rpage].A'+i+'_d);');
@@ -485,7 +485,7 @@ function setCanvasPage(string){
     var A1img = new Image();
     A1img.addEventListener("load", (e) => {
 
-      for (i = 1; i <= 18; i++) {
+      for (i = 1; i <= 20; i++) {
         eval('zed = pagetime[currpage-1].A'+i+'_l');
         if (zed != 0){
           eval('[y, x] = setimglocationsingle(pagetime[currpage-1].A'+i+'_l, pagetime[currpage-1].A'+i+'_d);');
