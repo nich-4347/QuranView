@@ -2,6 +2,8 @@
 Fixes
 _____
 
+09/14/26	x_char, y_char for location in img event handlers		- 
+09/12/26	added 2 more							-
 09/11/26	Adjusted maximum number of Ayah markers		 		-
 08/30/26	Adjust Juz' marker location for single page    			-
 08/16/26	Add back in unique corr_line                         		-
