@@ -252,15 +252,15 @@ function setCanvasNew(string){
     for (i = 1; i <= 20; i++) {
       eval('zed = pagetime[rpage-1].A'+i+'_l');
       if (zed != 0){
-        eval('[y, x] = setimglocation(pagetime[rpage-1].A'+i+'_l, pagetime[rpage-1].A'+i+'_d);');
-        ctx2.drawImage(Aimg, x, y);
+        eval('[y_a, x_a] = setimglocation(pagetime[rpage-1].A'+i+'_l, pagetime[rpage-1].A'+i+'_d);');
+        ctx2.drawImage(Aimg, x_a, y_a);
       }
     }
     for (i = 1; i <= 20; i++) {
       eval('zed = pagetime[rpage].A'+i+'_l');
       if (zed != 0){
-        eval('[y, x] = setimglocation(pagetime[rpage].A'+i+'_l, pagetime[rpage].A'+i+'_d);');
-        ctx2.drawImage(Aimg, x, y);
+        eval('[y_a, x_a] = setimglocation(pagetime[rpage].A'+i+'_l, pagetime[rpage].A'+i+'_d);');
+        ctx2.drawImage(Aimg, x_a, y_a);
       }
     }
   });
@@ -272,8 +272,8 @@ function setCanvasNew(string){
 
     do {
       if (SurahTable[i].page == rpage){
-        [y, x] = setimglocation(SurahTable[i].line+0.14, 0.36);
-        ctx2.drawImage(titleimg, x, y);
+        [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, 0.36);
+        ctx2.drawImage(titleimg, x_t, y_t);
       }
       i++;
     } while (SurahTable[i].page <= rpage && SurahTable[i].page != 0);
@@ -281,8 +281,8 @@ function setCanvasNew(string){
     i = 0;
     do {
       if (SurahTable[i].page == rpage+1){
-        [y, x] = setimglocation(SurahTable[i].line+0.14, -1.805);
-        ctx2.drawImage(titleimg, x, y);
+        [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, -1.805);
+        ctx2.drawImage(titleimg, x_t, y_t);
       }
       i++;
     } while (SurahTable[i].page <= rpage+1 && SurahTable[i].page != 0);
@@ -305,14 +305,14 @@ function setCanvasNew(string){
   i = 0;
     do {
       if (quarterhizbpage[i].page == rpage){
-        [y, x] = setimglocation(quarterhizbpage[i].hizb_line-1.35, 2.055);
+        [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35, 2.055);
         hizbtype = quarterhizbpage[i].hizb_type;
         [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
         [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
         if (quarterhizbpage[i].mark_d != 0){mark = 1}
         if (quarterhizbpage[i].corr_d != 0){corr = 1}
       } else if (quarterhizbpage[i].page == rpage+1){
-        [y, x] = setimglocation(quarterhizbpage[i].hizb_line-1.35,-2.085);
+        [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35,-2.085);
         hizbtype = quarterhizbpage[i].hizb_type;
         [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
         [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
@@ -324,18 +324,18 @@ function setCanvasNew(string){
     } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
 
       if (hizbtype == 1){
-        ctx2.drawImage(hizbmargimg1, x, y+10);
+        ctx2.drawImage(hizbmargimg1, x_m, y_m+10);
       }
   });
 
     hizbmargimg2.addEventListener("load", (e) => {
       if (hizbtype == 2){
-        ctx2.drawImage(hizbmargimg2, x, y);
+        ctx2.drawImage(hizbmargimg2, x_m, y_m);
       }
     });
     hizbmargimg3.addEventListener("load", (e) => {
       if (hizbtype == 3){
-        ctx2.drawImage(hizbmargimg3, x, y);
+        ctx2.drawImage(hizbmargimg3, x_m, y_m);
       }
     });
     hizbimg.addEventListener("load", (e) => {
@@ -408,8 +408,8 @@ function setCanvasPage(string){
       do {
         if (SurahTable[i].page == currpage){
 
-          [y, x] = setimglocationsingle(SurahTable[i].line+0.14, 0.36);
-          ctx.drawImage(titleimg, x, y);
+          [y_t, x_t] = setimglocationsingle(SurahTable[i].line+0.14, 0.36);
+          ctx.drawImage(titleimg, x_t, y_t);
         }
         i++;
       } while (SurahTable[i].page <= currpage && SurahTable[i].page != 0);
@@ -430,13 +430,13 @@ function setCanvasPage(string){
     do {
       if (quarterhizbpage[i].page == currpage){
         if (currpage % 2 !== 0){
-          [y, x] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, 2.055);
+          [y_m, x_m] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, 2.055);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
           [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
           if (quarterhizbpage[i].corr_d != 0){corr = 1}
         } else{
-          [y, x] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, -2.085);
+          [y_m, x_m] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, -2.085);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
           [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
@@ -450,19 +450,19 @@ function setCanvasPage(string){
     hizbmargimg1.addEventListener("load", (e) => {
 
     if (hizbtype == 1){
-        ctx.drawImage(hizbmargimg1, x, y+10);
+        ctx.drawImage(hizbmargimg1, x_m, y_m+10);
       }
 
     });
 
     hizbmargimg2.addEventListener("load", (e) => {
       if (hizbtype == 2){
-        ctx.drawImage(hizbmargimg2, x, y);
+        ctx.drawImage(hizbmargimg2, x_m, y_m);
       }
     });
     hizbmargimg3.addEventListener("load", (e) => {
       if (hizbtype == 3){
-        ctx.drawImage(hizbmargimg3, x, y);
+        ctx.drawImage(hizbmargimg3, x_m, y_m);
       }
     });
     hizbimg.addEventListener("load", (e) => {
@@ -488,8 +488,8 @@ function setCanvasPage(string){
       for (i = 1; i <= 20; i++) {
         eval('zed = pagetime[currpage-1].A'+i+'_l');
         if (zed != 0){
-          eval('[y, x] = setimglocationsingle(pagetime[currpage-1].A'+i+'_l, pagetime[currpage-1].A'+i+'_d);');
-          ctx.drawImage(A1img, x, y);
+          eval('[y_a, x_a] = setimglocationsingle(pagetime[currpage-1].A'+i+'_l, pagetime[currpage-1].A'+i+'_d);');
+          ctx.drawImage(A1img, x_a, y_a);
         }
       }
 
