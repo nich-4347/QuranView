@@ -385,7 +385,7 @@ function setCanvasNew(string){
 
     hizbimg.addEventListener("load", (e) => {
       if (mark != 0){
-        ctx2.drawImage(hizbimg, x_h+5, y_h+5);
+        ctx2.drawImage(hizbimg, x_h+6.6, y_h+6.6);
       }
     });
 
@@ -548,7 +548,7 @@ function setCanvasPage(string){
     });
     hizbimg.addEventListener("load", (e) => {
       if (mark != 0){
-        ctx.drawImage(hizbimg, x_h+5, y_h+5);
+        ctx.drawImage(hizbimg, x_h+6.6, y_h+6.6);
       }
     });
 
