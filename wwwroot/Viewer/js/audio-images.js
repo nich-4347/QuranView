@@ -209,157 +209,198 @@ function setimglocationsingle (line, d){
 
 function setCanvasNew(string){
 
-  var c2 = document.getElementById("myCanvas2");
-  var ctx2 = c2.getContext("2d");
+    var c2 = document.getElementById("myCanvas2");
+    var ctx2 = c2.getContext("2d");
 
 
-  ctx2.fillStyle = "#fff9f5";
+    ctx2.fillStyle = "#fff9f5";
 
-  ctx2.fillRect(0,0,1166,754);
+    ctx2.fillRect(0,0,1166,754);
 
 
-  ctx2.strokeStyle = "rgb(211, 211, 211)";
+    ctx2.strokeStyle = "rgb(211, 211, 211)";
 
-  // Define a new path
-  ctx2.beginPath();
-  // Set a start-point
-  ctx2.moveTo(583, -6);
-  // Set an end-point
-  ctx2.lineTo(583, 829);
-  // Stroke it (Do the Drawing)
-  ctx2.stroke();
+    // Define a new path
+    ctx2.beginPath();
+    // Set a start-point
+    ctx2.moveTo(583, -6);
+    // Set an end-point
+    ctx2.lineTo(583, 829);
+    // Stroke it (Do the Drawing)
+    ctx2.stroke();
 
-  var borderimg = new Image();
-  borderimg.addEventListener("load", (e) => {
-    ctx2.drawImage(borderimg, 0, 0);
-    ctx2.drawImage(borderimg, 583, 0);
-  });
-  borderimg.src = borderimgdir;
 
-  var rpage = 0;
-  if (currpage % 2 !== 0) {
-    rpage = currpage;
-  }else{
-    rpage = currpage-1;
-  }
+    var borderimg = new Image();
 
-  var i = 1;
-  var zed = 0;
+    borderimg.addEventListener("load", (e) => {
+      ctx2.drawImage(borderimg, 0, 0);
+      ctx2.drawImage(borderimg, 583, 0);
+    });
 
-  var Aimg = new Image();
-  Aimg.addEventListener("load", (e) => {
+    borderimg.src = borderimgdir;
 
-    for (i = 1; i <= 20; i++) {
-      eval('zed = pagetime[rpage-1].A'+i+'_l');
-      if (zed != 0){
-        eval('[y_a, x_a] = setimglocation(pagetime[rpage-1].A'+i+'_l, pagetime[rpage-1].A'+i+'_d);');
-        ctx2.drawImage(Aimg, x_a, y_a);
+    var rpage = 0;
+    if (currpage % 2 !== 0) {
+      rpage = currpage;
+    }else{
+      rpage = currpage-1;
+    }
+
+    var i = 1;
+    var zed = 0;
+
+    var Aimg = new Image();
+
+    Aimg.addEventListener("load", (e) => {
+
+      for (i = 1; i <= 20; i++) {
+        eval('zed = pagetime[rpage-1].A'+i+'_l');
+        if (zed != 0){
+          eval('[y_a, x_a] = setimglocation(pagetime[rpage-1].A'+i+'_l, pagetime[rpage-1].A'+i+'_d);');
+          ctx2.drawImage(Aimg, x_a, y_a);
+        }
+      }
+      for (i = 1; i <= 20; i++) {
+        eval('zed = pagetime[rpage].A'+i+'_l');
+        if (zed != 0){
+          eval('[y_a, x_a] = setimglocation(pagetime[rpage].A'+i+'_l, pagetime[rpage].A'+i+'_d);');
+          ctx2.drawImage(Aimg, x_a, y_a);
+        }
+      }
+    });
+
+    Aimg.src = Aimgdir;
+
+
+    var titleimg = new Image();
+
+    titleimg.addEventListener("load", (e) => {
+      i = 0;
+
+      do {
+        if (SurahTable[i].page == rpage){
+          [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, 0.36);
+          ctx2.drawImage(titleimg, x_t, y_t);
+        }
+        i++;
+      } while (SurahTable[i].page <= rpage && SurahTable[i].page != 0);
+
+      i = 0;
+      do {
+        if (SurahTable[i].page == rpage+1){
+          [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, -1.805);
+          ctx2.drawImage(titleimg, x_t, y_t);
+        }
+        i++;
+      } while (SurahTable[i].page <= rpage+1 && SurahTable[i].page != 0);
+    });
+
+    titleimg.src = titleimgdir;
+
+
+    var correctionimg = new Image();
+
+    var corrpg = 0;
+    corrpg = currpage;
+
+    var corr = 0;
+
+    if (corrpg % 2 !== 0) {
+      if (pagetime[corrpg-1].corr_line > 0){
+        [y_c, x_c] = setimglocation(pagetime[corrpg-1].corr_line, pagetime[corrpg-1].corr_d);
+        corr = 1;
+      }
+      if (pagetime[corrpg].corr_line > 0){
+        [y_c, x_c] = setimglocation(pagetime[corrpg].corr_line, pagetime[corrpg].corr_d);
+        corr = 1;
+      }
+    } else {
+      if (pagetime[corrpg-1].corr_line > 0){
+        [y_c, x_c] = setimglocation(pagetime[corrpg-1].corr_line, pagetime[corrpg-1].corr_d);
+        corr = 1;
       }
     }
-    for (i = 1; i <= 20; i++) {
-      eval('zed = pagetime[rpage].A'+i+'_l');
-      if (zed != 0){
-        eval('[y_a, x_a] = setimglocation(pagetime[rpage].A'+i+'_l, pagetime[rpage].A'+i+'_d);');
-        ctx2.drawImage(Aimg, x_a, y_a);
-      }
-    }
-  });
-  Aimg.src = Aimgdir;
 
-  var titleimg = new Image();
-  titleimg.addEventListener("load", (e) => {
-    i = 0;
-
-    do {
-      if (SurahTable[i].page == rpage){
-        [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, 0.36);
-        ctx2.drawImage(titleimg, x_t, y_t);
-      }
-      i++;
-    } while (SurahTable[i].page <= rpage && SurahTable[i].page != 0);
-
-    i = 0;
-    do {
-      if (SurahTable[i].page == rpage+1){
-        [y_t, x_t] = setimglocation(SurahTable[i].line+0.14, -1.805);
-        ctx2.drawImage(titleimg, x_t, y_t);
-      }
-      i++;
-    } while (SurahTable[i].page <= rpage+1 && SurahTable[i].page != 0);
-  });
-  titleimg.src = titleimgdir;
-
-
-  var hizbmargimg1 = new Image();
-  var hizbmargimg2 = new Image();
-  var hizbmargimg3 = new Image();
-  var hizbimg      = new Image();
-  var correctionimg = new Image();
-
-  var hizbtype = 0;
-  var corr = 0;
-  var mark = 0;
-
-
-  hizbmargimg1.addEventListener("load", (e) => {
-  i = 0;
-    do {
-      if (quarterhizbpage[i].page == rpage){
-        [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35, 2.055);
-        hizbtype = quarterhizbpage[i].hizb_type;
-        [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-        [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
-        if (quarterhizbpage[i].mark_d != 0){mark = 1}
-        if (quarterhizbpage[i].corr_d != 0){corr = 1}
-      } else if (quarterhizbpage[i].page == rpage+1){
-        [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35,-2.085);
-        hizbtype = quarterhizbpage[i].hizb_type;
-        [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-        [y_c, x_c] = setimglocation(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
-        if (quarterhizbpage[i].mark_d != 0){mark = 1}
-        if (quarterhizbpage[i].corr_d != 0){corr = 1}
-      }
-      i++
-    // } while (quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
-    } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
-
-      if (hizbtype == 1){
-        ctx2.drawImage(hizbmargimg1, x_m, y_m+10);
-      }
-  });
-
-    hizbmargimg2.addEventListener("load", (e) => {
-      if (hizbtype == 2){
-        ctx2.drawImage(hizbmargimg2, x_m, y_m);
-      }
-    });
-    hizbmargimg3.addEventListener("load", (e) => {
-      if (hizbtype == 3){
-        ctx2.drawImage(hizbmargimg3, x_m, y_m);
-      }
-    });
-    hizbimg.addEventListener("load", (e) => {
-      if (mark != 0){
-        ctx2.drawImage(hizbimg, x_h+5, y_h+5);
-      }
-    });
     correctionimg.addEventListener("load", (e) => {
       if (corr != 0){
         ctx2.drawImage(correctionimg, x_c+6, y_c+5);
       }
     });
 
+    correctionimg.src = correctionimgdir;
+
+
+    var hizbmargimg1 = new Image();
+    var hizbmargimg2 = new Image();
+    var hizbmargimg3 = new Image();
+    var hizbimg      = new Image();
+
+    var hizbtype = 0;
+    var mark = 0;
+
+
+    hizbmargimg1.addEventListener("load", (e) => {
+
+      i = 0;
+
+      do {
+        if (quarterhizbpage[i].page == rpage){
+
+          [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35, 2.055);
+          hizbtype = quarterhizbpage[i].hizb_type;
+          [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
+          if (quarterhizbpage[i].mark_d != 0){mark = 1}
+
+        } else if (quarterhizbpage[i].page == rpage+1){
+
+          [y_m, x_m] = setimglocation(quarterhizbpage[i].hizb_line-1.35,-2.085);
+          hizbtype = quarterhizbpage[i].hizb_type;
+          [y_h, x_h] = setimglocation(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
+          if (quarterhizbpage[i].mark_d != 0){mark = 1}
+
+        }
+
+        i++
+
+      // } while (quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
+      } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= rpage+1 && quarterhizbpage[i].page != 0);
+
+
+      if (hizbtype == 1){
+        ctx2.drawImage(hizbmargimg1, x_m, y_m+10);
+      }
+    });
+
+    hizbmargimg2.addEventListener("load", (e) => {
+      if (hizbtype == 2){
+        ctx2.drawImage(hizbmargimg2, x_m, y_m);
+      }
+    });
+
+    hizbmargimg3.addEventListener("load", (e) => {
+      if (hizbtype == 3){
+        ctx2.drawImage(hizbmargimg3, x_m, y_m);
+      }
+    });
+
+    hizbimg.addEventListener("load", (e) => {
+      if (mark != 0){
+        ctx2.drawImage(hizbimg, x_h+5, y_h+5);
+      }
+    });
+
+
     hizbmargimg1.src =  hizbmargimg1dir;
     hizbmargimg2.src =  hizbmargimg2dir;
     hizbmargimg3.src =  hizbmargimg3dir;
     hizbimg.src      =  hizbimgdir;
-    correctionimg.src = correctionimgdir;
 
     var img = new Image();
 
     img.addEventListener("load", (e) => {
       ctx2.drawImage(img, 0, 0);
     });
+
     img.src = '' + string;
 
 }
@@ -368,36 +409,40 @@ function setCanvasNew(string){
 
 function setCanvasPage(string){
 
-  var c2 = document.getElementById("myCanvas0");
-  var ctx = c2.getContext("2d");
+    var c2 = document.getElementById("myCanvas0");
+    var ctx = c2.getContext("2d");
 
-  var cropWidth = 583;
-  var cropHeight =754;
+    var cropWidth = 583;
+    var cropHeight =754;
 
-  c2.width = cropWidth;
-  c2.height = cropHeight;
-
-
-  ctx.fillStyle = "#fff9f5";
-
-  ctx.fillRect(0,0,583,754);
-
-  var cropX = 0;
-  var cropY = 0;
+    c2.width = cropWidth;
+    c2.height = cropHeight;
 
 
-  if (currpage % 2 !== 0) {
-    cropX = 583;
-  }
+    ctx.fillStyle = "#fff9f5";
 
-  var k = "A";
-  var i = 1;
-  var zed = 1;
+    ctx.fillRect(0,0,583,754);
+
+    var cropX = 0;
+    var cropY = 0;
+
+
+    if (currpage % 2 !== 0) {
+      cropX = 583;
+    }
+
+
+    var k = "A";
+    var i = 1;
+    var zed = 1;
+
 
     var borderimg = new Image();
+
     borderimg.addEventListener("load", (e) => {
       ctx.drawImage(borderimg, 0, 0);
     });
+
     borderimg.src = borderimgdir;
 
 
@@ -406,46 +451,82 @@ function setCanvasPage(string){
       i = 0;
 
       do {
+
         if (SurahTable[i].page == currpage){
 
           [y_t, x_t] = setimglocationsingle(SurahTable[i].line+0.14, 0.36);
           ctx.drawImage(titleimg, x_t, y_t);
         }
+
         i++;
+
       } while (SurahTable[i].page <= currpage && SurahTable[i].page != 0);
+
     });
+
     titleimg.src = titleimgdir;
+
+
+    var correctionimg = new Image();
+
+    var corrpg = 0;
+    corrpg = currpage;
+
+    var corr = 0;
+
+    if (pagetime[corrpg-1].corr_line > 0){
+      if (corrpg % 2 !== 0) {
+        [y_c, x_c] = setimglocationsingle(pagetime[corrpg-1].corr_line, pagetime[corrpg-1].corr_d);
+        corr = 1;
+      } else {
+        [y_c, x_c] = setimglocationsingle(pagetime[corrpg-1].corr_line, pagetime[corrpg-1].corr_d);
+        corr = 1;
+      }
+    }
+
+    correctionimg.addEventListener("load", (e) => {
+      if (corr != 0){
+        ctx.drawImage(correctionimg, x_c+6, y_c+5);
+      }
+    });
+
+    correctionimg.src = correctionimgdir;
+
 
     var hizbmargimg1 = new Image();
     var hizbmargimg2 = new Image();
     var hizbmargimg3 = new Image();
     var hizbimg      = new Image();
-    var correctionimg = new Image();
 
     var hizbtype = 0;
-    var corr = 0;
     var mark = 0;
 
     i = 0;
+
     do {
+
       if (quarterhizbpage[i].page == currpage){
         if (currpage % 2 !== 0){
+
           [y_m, x_m] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, 2.055);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
-          if (quarterhizbpage[i].corr_d != 0){corr = 1}
+
         } else{
+
           [y_m, x_m] = setimglocationsingle(quarterhizbpage[i].hizb_line-1.35, -2.085);
           [y_h, x_h] = setimglocationsingle(quarterhizbpage[i].hizb_line, quarterhizbpage[i].mark_d);
-          [y_c, x_c] = setimglocationsingle(quarterhizbpage[i].corr_line, quarterhizbpage[i].corr_d);
           if (quarterhizbpage[i].mark_d != 0){mark = 1}
-          if (quarterhizbpage[i].corr_d != 0){corr = 1}
+
         }
+
         hizbtype = quarterhizbpage[i].hizb_type;
       }
-      i++
+
+      i++;
+
     } while (i < quarterhizbpage.length && quarterhizbpage[i].page <= currpage && quarterhizbpage[i].page != 0);
+
 
     hizbmargimg1.addEventListener("load", (e) => {
 
@@ -470,19 +551,15 @@ function setCanvasPage(string){
         ctx.drawImage(hizbimg, x_h+5, y_h+5);
       }
     });
-    correctionimg.addEventListener("load", (e) => {
-      if (corr != 0){
-        ctx.drawImage(correctionimg, x_c+6, y_c+5);
-      }
-    });
 
     hizbmargimg1.src =  hizbmargimg1dir;
     hizbmargimg2.src =  hizbmargimg2dir;
     hizbmargimg3.src =  hizbmargimg3dir;
     hizbimg.src      =  hizbimgdir;
-    correctionimg.src = correctionimgdir;
+
 
     var A1img = new Image();
+
     A1img.addEventListener("load", (e) => {
 
       for (i = 1; i <= 20; i++) {
@@ -493,13 +570,16 @@ function setCanvasPage(string){
         }
       }
 
-      });
+    });
+
     A1img.src = Aimgdir;
+
 
     var img = new Image();
     img.addEventListener("load", (e) => {
       ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight,0, 0, cropWidth, cropHeight);
     });
+
     img.src = '' + string;
 
 }
