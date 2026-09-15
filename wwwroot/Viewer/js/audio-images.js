@@ -185,7 +185,7 @@ function setimglocationsingle (line, d){
   var verthalf = 754/2 + 4;
   var horzhalf = 1166/2 -14;
 
-  var vertscale = 269.863;
+  var vertscale = 270.6;
   var horzscale = 270.032;
 
   var vertincr = 0.147*vertscale;
@@ -340,7 +340,7 @@ function setCanvasNew(string){
     });
     hizbimg.addEventListener("load", (e) => {
       if (mark != 0){
-        ctx2.drawImage(hizbimg, x_h+6, y_h+5);
+        ctx2.drawImage(hizbimg, x_h+5, y_h+5);
       }
     });
     correctionimg.addEventListener("load", (e) => {
@@ -467,12 +467,12 @@ function setCanvasPage(string){
     });
     hizbimg.addEventListener("load", (e) => {
       if (mark != 0){
-        ctx.drawImage(hizbimg, x_h, y_h+5);
+        ctx.drawImage(hizbimg, x_h+5, y_h+5);
       }
     });
     correctionimg.addEventListener("load", (e) => {
       if (corr != 0){
-        ctx.drawImage(correctionimg, x_c, y_c+5);
+        ctx.drawImage(correctionimg, x_c+6, y_c+5);
       }
     });
 
