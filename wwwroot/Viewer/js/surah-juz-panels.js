@@ -860,8 +860,8 @@ var version = 0;
 var hizbmargimg1dir = './custom/example/Marg-Juz.png';
 var hizbmargimg2dir = './custom/example/Marg-Hizb.png';
 var hizbmargimg3dir = './custom/example/Marg-Quarter.png';
-var hizbimgdir      = './custom/example/hizb.png';
-var correctionimgdir = './custom/example/correction.png';
+var hizbimgdir      = './custom/example/Hizb.png';
+var correctionimgdir = './custom/example/Correction.png';
 
 var borderimgdir = './custom/example/border.png';
 var Aimgdir      = './custom/example/Number.png';
@@ -883,8 +883,8 @@ function setver(select) {
       hizbmargimg1dir  = './custom/example/Marg-Juz.png';
       hizbmargimg2dir  = './custom/example/Marg-Hizb.png';
       hizbmargimg3dir  = './custom/example/Marg-Quarter.png';
-      hizbimgdir       = './custom/example/hizb.png';
-      correctionimgdir = './custom/example/correction.png';
+      hizbimgdir       = './custom/example/Hizb.png';
+      correctionimgdir = './custom/example/Correction.png';
 
       borderimgdir     = './custom/example/border.png';
       Aimgdir          = './custom/example/Number.png';
