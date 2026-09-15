@@ -2,6 +2,7 @@
 Fixes
 _____
 
+09/15/26	Additional adjustment to Hizb mark				-
 09/14/26	Adjust Hizb mark padding & vertical scale for Single page	-
 09/14/26	Filename, on Webhosting, is case sensitive - Hizb.png    	-
 09/14/26	x_char, y_char for location in img event handlers		- 
@@ -25,7 +26,9 @@ ____________
 
 
 09/14/26	Adjust Data:
-		- Correction markers data now stored in pagetime array
+09/15/26	- Correction markers data now stored in pagetime array
+
+		Update Python Script & QuranView blend.zip
 
 
 08/18/26	Word 4 Word Reading Pane in Single Page View - Surah 12 on
